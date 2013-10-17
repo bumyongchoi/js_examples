@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body ng-app>
+    <div id="new-item-app" ng-controller="ItemCtrl">
+        <form id="input-form" ng-submit="submit()">
+            <input id="new-item" placeholder="Next item?" ng-model="newItem" autofocus>
+        </form>
+        <ul id="item-list">
+            <li ng-repeat="item in items" ng-bind='item'></li>
+        </ul>
+    </div>
+</body>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.1.5/angular.min.js"></script>
+<script src="app.js"></script>
+</html>
