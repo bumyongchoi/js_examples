@@ -1,9 +1,5 @@
 'use strict';
 
-var EditPage = angular.module("myapp", [], function () {
-    }
-);
-
 function ItemCtrl ($scope) {
     $scope.items = [];
 
