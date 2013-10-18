@@ -1,0 +1,19 @@
+.slide.ng-enter,
+.slide.ng-leave {
+    -webkit-transition: all ease .5s;
+    transition:         all ease .5s;
+
+}
+
+.slide.ng-enter,
+.slide.ng-leave.ng-leave-active {
+    -webkit-transform: translatex(200px);
+    transform:         translatex(200px);
+    opacity: 0;
+}
+.slide.ng-leave,
+.slide.ng-enter.ng-enter-active {
+    -webkit-transform: translatex(0px);
+    transform:         translatex(0px);
+    opacity: 1;
+}

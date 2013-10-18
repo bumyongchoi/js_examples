@@ -1,14 +1,8 @@
-'use strict';
-
-var EditPage = angular.module("myapp", [], function () {
-    }
-);
-
-function ItemCtrl ($scope) {
+var myApp = angular.module('myApp', ['ngAnimate']);
+myApp.controller('ItemCtrl', function ($scope) {
     $scope.items = [];
-
     $scope.submit = function () {
         $scope.items.push($scope.newItem);
         $scope.newItem = '';
     };
-}
+});

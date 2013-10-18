@@ -1,20 +1,17 @@
-var app = app || {};
-var ENTER_KEY = 13;
-
-(function ($) {
-	'use strict';
-
+$(function() {
+    var app = {};
+    var ENTER_KEY = 13;
     var items = Backbone.Collection.extend({
     });
 
     app.items = new items();
 
     app.AppView = Backbone.View.extend({
-		el: '#new-item-app',
+        el: '#new-item-app',
 
         events: {
-			'keypress #new-item': 'createOnEnter'
-		},
+            'keypress #new-item': 'createOnEnter'
+        },
 
         initialize: function () {
             this.$input = this.$('#new-item');
@@ -22,12 +19,12 @@ var ENTER_KEY = 13;
         },
 
         createOnEnter: function (e) {
-			if (e.which !== ENTER_KEY || !this.$input.val().trim()) {
-				return;
-			}
+            if (e.which !== ENTER_KEY || !this.$input.val().trim()) {
+                return;
+            }
             app.items.add({item: this.$input.val().trim()});
-			this.$input.val('');
-		},
+            this.$input.val('');
+        },
 
         addOne: function (model) {
             var itemView = new app.ItemView({model: model});
@@ -47,4 +44,4 @@ var ENTER_KEY = 13;
     });
 
     new app.AppView();
-})(jQuery);
+});
